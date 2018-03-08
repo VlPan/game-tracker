@@ -1,0 +1,18 @@
+<div class="concreate-game__average-point">Average: {{$ctrl.averagePoint}}</div>
+
+<div class="concreate-game__history-container">
+   <div ng-repeat="history in $ctrl.history track by $index"  class="concreate-game__history-item" >
+      <div class="concreate-game__points"
+      ng-class="{
+
+         'concreate-game__points--blue': $ctrl.averagePoint - history.points < 200 && $ctrl.averagePoint - history.points >= -20,
+         'concreate-game__points--green': $ctrl.averagePoint - history.points < -21,
+         'concreate-game__points--red': $ctrl.averagePoint - history.points >= 150
+       }">
+         {{history.points}}
+      </div>
+      <div class="concreate-game__date">
+         {{history.date | date:"dd.MM.yyyy 'at' H:m:ss"}}
+      </div>
+   </div>
+</div>

@@ -1,0 +1,59 @@
+@import "./../../../css-settings/variables";
+
+.bw-game-card{
+
+
+  padding: 2rem 5rem;
+  border: 3px solid $grey-hr;
+  text-align: center;
+  font-size: 1.6rem;
+
+  &__name{
+    font-weight: 700;
+    color: $color-tertiary-light;
+    font-size: 2rem;
+  }
+
+  &__form{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__points-input{
+    padding: 1rem 2rem;
+    width: 80%;
+    font-weight: 700;
+    color: $font-color;
+  }
+
+  &__ok-btn:disabled{
+    color: $font-color;
+  }
+
+  &__ok-btn{
+    background-color: transparent;
+    margin-right: 2rem;
+    padding: 1rem;
+    color: #7ed56f;
+      .fa{
+        font-size: 3rem;
+      }
+  }
+
+  &__stats-btn{
+    display: inline-block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background-color: $color-tertiary-light;
+    border-radius: 25px;
+    margin-top: 1rem;
+    transition: all .3s;
+  }
+
+
+
+}

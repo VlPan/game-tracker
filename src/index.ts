@@ -9,7 +9,7 @@ import './vendor';
  */
 import './css-settings/index.scss';
 
-// import './assets/img/logo.jpg';
+
 
 
 /**

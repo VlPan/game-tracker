@@ -1,0 +1,15 @@
+
+<div class="concreate-game__container">
+   <h1 class="concreate-game__name">{{$ctrl.game.name}}</h1>
+
+
+   <div class="chart-container" style="position: relative; height: 100%; width: 100%;">
+      <canvas id="myChart"></canvas>
+   </div>
+
+</div>
+
+<history-table
+      history="$ctrl.history"
+      points="$ctrl.points"
+></history-table>

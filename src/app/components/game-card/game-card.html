@@ -1,0 +1,29 @@
+
+
+<div class="bw-game-card">
+   <div class="bw-game-card__name">{{ $ctrl.game.name }}</div>
+
+   <form class="bw-game-card__form u-center-text" name="pointsForm">
+      <input type="number"
+             min="0"
+             max="300000"
+             name="points"
+             class="bw-game-card__points-input"
+             placeholder="points"
+             ng-model="points"
+             required
+      >
+      <button class="bw-game-card__ok-btn"
+              ng-disabled="pointsForm.points.$invalid"
+              ng-click="$ctrl.addHistory($ctrl.game.id, points, $event)"
+      >
+         <i class="fa fa-check-square"></i>
+      </button>
+   </form>
+   <a    class="bw-game-card__stats-btn"
+         ui-sref="game({ id: {{$ctrl.game.id}} })">Statistics</a>
+</div>
+
+
+
+

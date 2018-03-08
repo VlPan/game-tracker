@@ -74,8 +74,9 @@
     "clean-webpack-plugin": "^0.1.17"
   },
   "dependencies": {
+    "@types/chartjs": "0.0.31",
     "@uirouter/angularjs": "1.0.12",
     "angular": "^1.6.7",
-    "bootstrap": "^3.3.7"
+    "chart.js": "^2.7.2"
   }
 }

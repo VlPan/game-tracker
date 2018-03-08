@@ -5,7 +5,7 @@ import * as angular from 'angular';
  * Import Module Components
  */
 
-import { SignIn } from '../../components/signin/signin.component';
+import { Home } from '../../components/home/home.component';
 
 /**
  * Import Module Containers
@@ -20,7 +20,11 @@ import { SignIn } from '../../components/signin/signin.component';
 /**
  * Import Module Routing
  */
-import { routing } from './signin.routes';
+import { routing } from './home.routes';
+import {GamesService} from '../../services/games.service';
+import {LsService} from '../../services/ls.service';
+import {GameCard} from '../../components/game-card/game-card';
+import {HistoryService} from '../../services/history.service';
 
 export const moduleName =
     angular.module('application.signin', [
@@ -30,7 +34,8 @@ export const moduleName =
     /**
      * Register Module Components
      */
-        .component(SignIn.selector, SignIn)
+        .component(Home.selector, Home)
+        .component(GameCard.selector, GameCard)
 
         /**
          * Register Module Containers
@@ -38,7 +43,9 @@ export const moduleName =
         /**
          * Register Module Services
          */
-
+        .service(GamesService.selector, GamesService)
+        .service(LsService.selector, LsService)
+        .service(HistoryService.selector, HistoryService)
         /**
          * Register Module Configuration
          */

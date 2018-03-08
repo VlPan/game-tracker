@@ -1,0 +1,16 @@
+.bw-home{
+  text-align: center;
+  &__search{
+    padding: 2rem 3rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #28b485;
+    margin-bottom: 40px;
+  }
+
+}
+
+.bw__clear{
+  cursor: pointer;
+  font-size: 3rem;
+}

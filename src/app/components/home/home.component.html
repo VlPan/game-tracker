@@ -1,0 +1,16 @@
+
+<div class="bw-home">
+<input type="text"
+       ng-model="$ctrl.gamesService.whatToSearch"
+       class="bw-home__search"
+       id="elementID"
+>
+
+   <div ng-click="$ctrl.gamesService.whatToSearch = undefined">
+      <h1 class="bw__clear">Clear Filter</h1>
+   </div>
+
+   <div ng-repeat="game in $ctrl.gameList  | filter:$ctrl.gamesService.whatToSearch">
+      <game-card game="game"></game-card>
+   </div>
+</div>

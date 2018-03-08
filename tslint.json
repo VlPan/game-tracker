@@ -53,7 +53,7 @@
     ],
     "quotemark": [true, "single"],
     "radix": true,
-    "semicolon": true,
+    "semicolon": false,
     "triple-equals": [true, "allow-null-check"],
     "typedef": [true,
       "callSignature",
@@ -62,18 +62,8 @@
       "propertySignature",
       "variableDeclarator"
     ],
-    "typedef-whitespace": [true,
-      ["callSignature", "noSpace"],
-      ["catchClause", "noSpace"],
-      ["indexSignature", "space"]
-    ],
+    "typedef-whitespace": false,
     "variable-name": false,
-    "whitespace": [true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
-    ]
+    "whitespace": false
   }
 }
