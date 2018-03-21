@@ -5,12 +5,23 @@
        class="bw-home__search"
        id="elementID"
 >
+   <h1 class="bw-home__title"
+       ng-click="$ctrl.gamesService.trainMode = !$ctrl.gamesService.trainMode"
+       ng-class="{
+       'bw-home__title--red': $ctrl.gamesService.trainMode,
+       'bw-home__title--green': !$ctrl.gamesService.trainMode
+       }"
 
-   <div ng-click="$ctrl.gamesService.whatToSearch = undefined">
-      <h1 class="bw__clear">Clear Filter</h1>
+   >{{$ctrl.gamesService.trainMode ?  'Train Mode' : 'Game mode'}}
+
+   </h1>
+
+
+   <div ng-if="!$ctrl.gamesService.trainMode" ng-repeat="game in $ctrl.gameList  | filter:$ctrl.gamesService.whatToSearch">
+      <game-card game="game"></game-card>
    </div>
 
-   <div ng-repeat="game in $ctrl.gameList  | filter:$ctrl.gamesService.whatToSearch">
-      <game-card game="game"></game-card>
+   <div ng-if="$ctrl.gamesService.trainMode" ng-repeat="game in $ctrl.trainList  | filter:$ctrl.gamesService.whatToSearch">
+      <game-card game="game" isTrain="$ctrl.trainMode"></game-card>
    </div>
 </div>

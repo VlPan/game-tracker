@@ -12,20 +12,13 @@ class HistoryTableController {
 
     constructor(
         private helperService: HelperService
-    ){
+    ) {
 
     }
-
-
-
 
     $onInit() {
         this.averagePoint = this.helperService.average(this.points);
     }
-
-
-
-
 }
 
 export class HistoryTable implements angular.IComponentOptions {

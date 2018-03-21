@@ -3,6 +3,7 @@ import {Game} from '../models/Game';
 export class GamesService {
     static selector = 'gamesService';
     public whatToSearch: string;
+    public trainMode = false;
 
     private gameList: Game[] = [
         {id: 1, name: 'Operations'},
@@ -62,14 +63,114 @@ export class GamesService {
         {id: 55, name: 'Pixel logic'},
         {id: 56, name: 'Smile on me'},
         {id: 57, name: 'Face switch'},
+        {id: 58, name: 'Таблица Шульце'},
+        {id: 59, name: 'Запомни число'},
+        {id: 60, name: 'Поле зрения'},
+        {id: 61, name: 'Скорость чтения'},
+        {id: 62, name: 'Пары слов'},
+        {id: 63, name: 'Четные числа'},
+        {id: 64, name: 'What\'s the sign?'},
+        {id: 65, name: 'Same or different?'},
+        {id: 66, name: 'Four corners'},
+        {id: 67, name: 'Hidden animals'},
+        {id: 68, name: 'Тренировка внимания'},
+        {id: 69, name: 'Переключение внимания'},
+        {id: 70, name: 'Запоминание лиц'},
+        {id: 71, name: 'Колорадо'},
+        {id: 72, name: 'Скорость света'},
+        {id: 73, name: 'Фигуранты'},
+        {id: 74, name: 'Уникальный'},
+        {id: 75, name: 'Кто новый'},
+        {id: 76, name: 'Больше меньше'},
+        {id: 77, name: 'Найди всех'},
+        {id: 78, name: 'Формула'},
+        {id: 79, name: 'Калькулятор'},
+        {id: 80, name: 'Логицепь'},
+        {id: 81, name: 'Соедени пары'},
+        {id: 82, name: 'Раскрашенная дорожка'},
+        {id: 83, name: 'Мозайка памяти'},
+        {id: 84, name: '248'},
+        {id: 85, name: 'Ebb and flow'},
+        {id: 86, name: 'Lost in migration'},
+        {id: 87, name: 'Trouble Brewing'},
+        {id: 88, name: 'Spin Cycle'},
+        {id: 89, name: 'Calculator'},
+        {id: 90, name: 'Quick calculation'},
+        {id: 91, name: 'Math machine'},
+        {id: 92, name: 'Mathematical pairs'},
+        {id: 93, name: 'Mental airthmetic'},
+        {id: 94, name: 'Rock-paper-scissor'},
+        {id: 95, name: 'colors'},
+        {id: 96, name: 'Mental agility'},
+        {id: 97, name: 'Peripheral vision'},
+        {id: 98, name: 'grid color'},
+        {id: 99, name: 'Ropes and pulleys'},
+        {id: 100, name: 'Find the number'},
+        {id: 101, name: 'How many there are'},
+        {id: 102, name: 'Different color'},
+        {id: 103, name: 'Simon says'},
+        {id: 104, name: 'Find the pairs'},
+        {id: 105, name: 'Remember square'},
+        {id: 106, name: 'New cell'},
+        {id: 107, name: 'Photographic memory'},
+        {id: 108, name: 'Иди по следу'},
+        {id: 109, name: 'Пирамидки'},
+        {id: 110, name: 'Упорядочить цифры'},
+        {id: 111, name: 'Матем - тест'},
+        {id: 112, name: 'Бд - тест'},
+        {id: 113, name: 'Кс - тест'},
+        {id: 114, name: 'Псп - тест'},
     ];
+
+    private trainList = [
+        {id: 1, name: 'Operations'},
+        {id: 2, name: 'Flick Master'},
+        {id: 3, name: 'Simplicity'},
+        {id: 4, name: 'Reverse RPS'},
+        {id: 5, name: 'Touch the Number'},
+        {id: 6, name: 'Follow The Leader'},
+        {id: 7, name: 'Addition Addition'},
+        {id: 8, name: 'Matching'},
+        {id: 9, name: 'Color of deception'},
+        {id: 10, name: 'Concentration'},
+        {id: 11, name: 'High or Low'},
+        {id: 12, name: 'Bird Watching'},
+        {id: 13, name: 'Addition Link'},
+        {id: 14, name: 'Reflection'},
+        {id: 15, name: 'Unfollow the Leader'},
+        {id: 16, name: 'Tap the Color'},
+        {id: 17, name: 'Rainfall'},
+        {id: 18, name: 'Path to Safety'},
+        {id: 19, name: 'Touch the Number+'},
+        {id: 20, name: 'Rapid Sorting'},
+        {id: 21, name: 'Quick Eye'},
+        {id: 22, name: 'Whether Cast'},
+        {id: 23, name: 'Spinning block'},
+        {id: 24, name: 'Drive the gear'},
+        {id: 25, name: 'Card calculation'},
+        {id: 26, name: 'Make10'},
+        {id: 27, name: 'Break the block'},
+        {id: 28, name: 'Hexa-Chain'},
+        {id: 29, name: 'Color Switch'},
+        {id: 30, name: 'Missing Pieces'},
+    ]
 
 
     getGameList() {
         return this.gameList;
     }
 
+    getTrainList() {
+        return this.trainList;
+    }
+
     getGameById(id: number): Game {
         return this.gameList.find(game => game.id === +(id));
     }
+
+    getTrainById(id: number): Game {
+        return this.trainList.find(tr => tr.id === +(id));
+    }
+
+
 }

@@ -1,18 +1,18 @@
 /**
  * Import the Component styles
  */
-import './concreate-game.component.scss';
+import './concreate-train.component.scss';
 import {HistoryService} from '../../services/history.service';
 import {GamesService} from '../../services/games.service';
 import {Game} from '../../models/Game';
 import {Chart} from 'chart.js';
 import {HelperService} from '../../services/helperService';
 
-class ConcreateGameController {
+class ConcreateTrainController {
 
-    history: { id: number , points: number }[];
-    game: Game;
-    points: number[];
+    history: { id: number , correctAnswers: number }[];
+    train: any;
+    correctAnswers: number[];
     averagePoint: number;
 
     constructor(
@@ -22,33 +22,33 @@ class ConcreateGameController {
         private helperService: HelperService
 
 ) {
-      this.history = this.historyService.getAllHistoryGamesById(this.$stateParams.id).reverse();
-      this.game = this.gamesService.getGameById(this.$stateParams.id);
+      this.history = this.historyService.getAllHistoryTrainsById(this.$stateParams.id).reverse();
+      this.train = this.gamesService.getTrainById(this.$stateParams.id);
     }
 
     $onInit() {
 
-        this.points = this.history.map((el:  { id: number , points: number }) =>  el.points);
+        this.correctAnswers = this.history.map((el:  { id: number , correctAnswers: number }) =>  el.correctAnswers);
         let randomColor = this.helperService.getRandomColor();
 
         let ctx: any = (<HTMLCanvasElement>document.getElementById('myChart')).getContext('2d');
 
-        this.averagePoint = this.helperService.average(this.points);
-        console.log(this.points);
-        this.points = this.points.reverse().splice(-12);
-        console.log(this.points);
+        this.averagePoint = this.helperService.average(this.correctAnswers);
+        console.log(this.correctAnswers);
+        this.correctAnswers = this.correctAnswers.reverse().splice(-12);
+        console.log(this.correctAnswers);
         let chart = new Chart(ctx, {
 
             type: 'line',
 
 
             data: {
-                labels: this.generateLabels(this.points.length),
+                labels: this.generateLabels(this.correctAnswers.length),
                 datasets: [{
                     label: 'Last 20 games',
                     backgroundColor: randomColor,
                     borderColor: randomColor,
-                    data: this.points,
+                    data: this.correctAnswers,
                     fill: false
                 }]
             },
@@ -97,8 +97,8 @@ class ConcreateGameController {
     }
 }
 
-export class ConcreateGame implements angular.IComponentOptions {
-  static selector = 'concreateGame';
-  static controller = ConcreateGameController;
-  static template = require('./concreate-game.component.html');
+export class ConcreateTrain implements angular.IComponentOptions {
+  static selector = 'concreateTrain';
+  static controller = ConcreateTrainController;
+  static template = require('./concreate-train.component.html');
 }

@@ -17,6 +17,8 @@ import { routing } from './statistics.routes';
 import {HistoryService} from '../../services/history.service';
 import {HistoryTable} from '../../components/history-table/history-table';
 import {HelperService} from '../../services/helperService';
+import {ConcreateTrain} from '../../components/concreate-train/concreate-train.component';
+import {DsTooltip} from '../../components/ds-tooltip/ds-tooltip.component';
 
 export const moduleName =
   angular.module('application.contacts', [
@@ -29,6 +31,7 @@ export const moduleName =
 
   .component(ConcreateGame.selector, ConcreateGame)
   .component(HistoryTable.selector, HistoryTable)
+  .component(ConcreateTrain.selector, ConcreateTrain)
 
 
 

@@ -33,6 +33,7 @@
   }
 
   &__ok-btn{
+    position: relative;
     background-color: transparent;
     margin-right: 2rem;
     padding: 1rem;
@@ -52,6 +53,7 @@
     border-radius: 25px;
     margin-top: 1rem;
     transition: all .3s;
+
   }
 
 

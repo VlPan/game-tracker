@@ -5,7 +5,16 @@
     font-weight: 700;
     font-size: 2rem;
     color: #28b485;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+  &__title{
+    font-size: 3.5rem;
+    &--red{
+      color: orangered;
+    }
+    &--green{
+      color: #28b485;
+    }
   }
 
 }
@@ -13,4 +22,16 @@
 .bw__clear{
   cursor: pointer;
   font-size: 3rem;
+}
+
+@media (max-width: 400px) {
+  .bw-home{
+    &__search{
+      padding: 1rem 1.5rem;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      margin-top: 1.5rem;
+    }
+
+  }
 }

@@ -10,7 +10,7 @@ import {Game} from '../../models/Game';
 class HomeController {
 
     gameList : Game[];
-
+    trainList : Game[];
 
     constructor(
         private gamesService: GamesService,
@@ -18,6 +18,7 @@ class HomeController {
     ) {
         'ngInject';
         this.gameList = gamesService.getGameList() || [];
+        this.trainList = gamesService.getTrainList() || [];
     }
 
     $onInit() {

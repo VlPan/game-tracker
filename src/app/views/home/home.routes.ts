@@ -8,5 +8,6 @@ export const routing = ($stateProvider: angular.ui.IStateProvider) => {
             parent: 'app',
             url: '/home',
             component: Home.selector
-        });
+        })
+
 };

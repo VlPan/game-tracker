@@ -2,13 +2,9 @@
 
 
 <div class="concreate-game__container">
-      <h1 class="concreate-game__name">
-         {{$ctrl.game.name}}
-
-      </h1>
+   <h1 class="concreate-game__name">{{$ctrl.game.name}}</h1>
 
 <div style="display: inline-block; margin-bottom: 15px;">
-
    <a    ng-if="+($ctrl.$stateParams.id) - 1 > 0"
          class="bw-game-card__stats-btn"
          ui-sref="game({ id: {{+($ctrl.$stateParams.id) - 1}} })"> Prev </a>
@@ -24,5 +20,5 @@
 
 <history-table
       history="$ctrl.history"
-      points="$ctrl.points"
+      points="$ctrl.correctAnswers"
 ></history-table>

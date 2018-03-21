@@ -25,6 +25,7 @@ import {GamesService} from '../../services/games.service';
 import {LsService} from '../../services/ls.service';
 import {GameCard} from '../../components/game-card/game-card';
 import {HistoryService} from '../../services/history.service';
+import {DsTooltip} from '../../components/ds-tooltip/ds-tooltip.component';
 
 export const moduleName =
     angular.module('application.signin', [
@@ -36,6 +37,7 @@ export const moduleName =
      */
         .component(Home.selector, Home)
         .component(GameCard.selector, GameCard)
+        .component(DsTooltip.selector, DsTooltip)
 
         /**
          * Register Module Containers
